@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b5147f5-efbb-4551-9aad-35b404ff6fe5" name="Changes" comment="add models">
-      <change afterPath="$PROJECT_DIR$/EndProject/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EndProject/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Tasks/task_confirm_delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Tasks/task_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Tasks/task_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Users/choose_team.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Users/user_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DjangoProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoProject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndProject/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/EndProject/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EndProject/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/EndProject/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EndProject/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/EndProject/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EndProject/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/EndProject/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tamplates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/tamplates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tamplates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -45,8 +59,14 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Pnini/Documents/מקצועות/מסלול/PYTHON/PythonTaskManage/tamplates",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -55,6 +75,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Pnini\Documents\מקצועות\מסלול\PYTHON\PythonTaskManage\tamplates" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="DjangoProject" type="Python.DjangoServer" factoryName="Django server">
       <module name="DjangoProject" />
@@ -69,6 +94,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
       <option name="launchJavascriptDebuger" value="false" />
       <option name="port" value="8000" />
       <option name="host" value="" />
@@ -84,11 +110,12 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.26927.90" />
-        <option value="bundled-python-sdk-41e8cd69c857-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.29346.142" />
+        <option value="bundled-python-sdk-f2b7a9f6281b-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.142" />
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2b5147f5-efbb-4551-9aad-35b404ff6fe5" name="Changes" comment="" />
@@ -99,7 +126,9 @@
       <workItem from="1766920677005" duration="1601000" />
       <workItem from="1766922396384" duration="15000" />
       <workItem from="1766925236059" duration="3050000" />
-      <workItem from="1767012889665" duration="6264000" />
+      <workItem from="1767012889665" duration="6421000" />
+      <workItem from="1767088320738" duration="86000" />
+      <workItem from="1767088451620" duration="16274000" />
     </task>
     <task id="LOCAL‎-00001" summary="add reg file">
       <option name="closed" value="true" />

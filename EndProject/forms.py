@@ -1,6 +1,18 @@
 from django import forms
 from .models import User, Team, Task
+from datetime import datetime, timedelta
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
+
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2']
+
+class CustomAuthenticationForm(AuthenticationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'password']
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -15,22 +27,21 @@ class UserForm(forms.ModelForm):
             "password": "Should contains letters and numbers",
         }
 
-    # def clean_username(self):
-    #         cUsername = self.cleaned_data["username"]
-    #         if not cUsername.is():
-    #             raise forms.ValidationError("Should be valid email address")
-    #         return cUsername
-
-    # def clean_password(self):
-    #         lname = self.cleaned_data["l_name"]
-    #         if not lname.isalpha():
-    #             raise forms.ValidationError("Should contains only letters")
-    #         return lname
 
 class TaskForm(forms.ModelForm):
+    deadline = forms.DateField(
+        widget=forms.DateInput(
+            attrs={
+                'type': 'date'  # מציג חץ לבחירת תאריך
+            }
+        ),
+        initial=(datetime.today() + timedelta(days=30)).date()  # חודש קדימה
+    )
+    myTeam = forms.ModelChoiceField(Team.objects.all())
+    myDoner = forms.ModelChoiceField(User.objects.all())
     class Meta:
         model = Task
-        fields = __all__
+        fields = "__all__"
         labels = {
             "title": "Title",
             "describe": "Description",
@@ -48,3 +59,8 @@ class TeamForm(forms.ModelForm):
     class Meta:
         model = Team
         fields = ["name"]
+
+
+class ChooseTeamForm(forms.Form):
+    team = forms.ModelChoiceField(queryset=Team.objects.all(), empty_label="Select a team")
+    role = forms.ChoiceField(choices=[('admin', 'Admin'), ('worker', 'Worker')])
