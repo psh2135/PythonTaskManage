@@ -1,11 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import User, Task, Team
 from .forms import CustomUserCreationForm,CustomAuthenticationForm, TaskForm, ChooseTeamForm
-#from django.http import Http404
 from django.db import transaction
-
 from django.contrib.auth import login, logout
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.decorators import login_required
 
 #home
@@ -101,14 +98,16 @@ def task_delete(request, pk):
 @login_required
 @transaction.atomic
 def task_create(request):
-    if request.method == "POST":
-        form = TaskForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('task_list')  # הפניה חזרה לרשימת משימות
+    if request.user.role == "admin":
+        if request.method == "POST":
+            form = TaskForm(request.POST)
+            if form.is_valid():
+                form.save()
+                return redirect('task_list')
+        else:
+            form = TaskForm()
     else:
-        form = TaskForm()
-
+        return redirect('task_list')
     return render(request, 'Tasks/task_form.html', {'form': form})
 
 @login_required

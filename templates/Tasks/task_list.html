@@ -5,9 +5,9 @@
 </head>
 <body>
     <h1>All Tasks</h1>
-
-    <a href="{% url 'task_create' %}">Add New Task</a>
-
+    {% if user.role == "admin" %}
+        <a href="{% url 'task_create' %}">Add New Task</a>
+    {% endif %}
     <table border="1">
         <tr>
             <th>Title</th>

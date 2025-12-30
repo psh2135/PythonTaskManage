@@ -32,7 +32,7 @@ class TaskForm(forms.ModelForm):
     deadline = forms.DateField(
         widget=forms.DateInput(
             attrs={
-                'type': 'date'  # מציג חץ לבחירת תאריך
+                'type': 'date'
             }
         ),
         initial=(datetime.today() + timedelta(days=30)).date()  # חודש קדימה
@@ -50,10 +50,6 @@ class TaskForm(forms.ModelForm):
             "myTeam" : "Team",
             "myDoner": "Doner"
         }
-
-    # def __init__(self, *args, **kwargs):
-    #      super().__init__(*args, **kwargs)
-    #    #  self.fields["kita"].queryset = Kita.objects.filter(can_register=True)
 
 class TeamForm(forms.ModelForm):
     class Meta:
