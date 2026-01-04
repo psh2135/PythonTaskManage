@@ -23,6 +23,8 @@
       <change beforePath="$PROJECT_DIR$/templates/Tasks/task_confirm_delete.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Tasks/task_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Tasks/task_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "M:/PYTHON/EndProject/PythonTaskManage",
     "node.js.detected.package.eslint": "true",
@@ -115,7 +118,7 @@
       <workItem from="1766925236059" duration="3050000" />
       <workItem from="1767012889665" duration="6421000" />
       <workItem from="1767169959690" duration="1246000" />
-      <workItem from="1767530711336" duration="3995000" />
+      <workItem from="1767530711336" duration="4754000" />
     </task>
     <task id="LOCAL‎-00001" summary="add reg file">
       <option name="closed" value="true" />
