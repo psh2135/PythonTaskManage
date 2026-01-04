@@ -57,7 +57,7 @@ def choose_team(request):
             role = form.cleaned_data['role']
             user = request.user
             user.role = role
-            user.myTeam = team  # בהתאם לשדה שלך במודל User
+            user.myTeam = team
             user.save()
             return redirect("home")
     else:
@@ -65,12 +65,29 @@ def choose_team(request):
     return render(request, "Users/choose_team.html", {"form": form})
 
 #tasks
+# @login_required
+# def task_list(request):
+#     user = request.user
+#     tasks = Task.objects.filter(myTeam = user.myTeam)
+#     return render(request, 'Tasks/task_list.html', {'Tasks': tasks})
+
+
 @login_required
 def task_list(request):
     user = request.user
     tasks = Task.objects.filter(myTeam=user.myTeam)
-    return render(request, 'Tasks/task_list.html', {'Tasks': tasks})
 
+    # פילטר לפי סטטוס
+    status = request.GET.get('status')
+    if status:
+        tasks = tasks.filter(status=status)
+
+    # פילטר לפי שם עובד
+    employee_name = request.GET.get('employee_name')
+    if employee_name:
+        tasks = tasks.filter(assigned_to__name__icontains=employee_name)
+
+    return render(request, 'Tasks/task_list.html', {'Tasks': tasks})
 @login_required
 def task_update(request, pk):
     task = get_object_or_404(Task, pk=pk)
@@ -81,7 +98,7 @@ def task_update(request, pk):
                 form.save()
                 return redirect('task_list')
         else:
-            form = TaskForm(instance=task)
+            form = TaskForm(instance = task)
         return render(request, 'Tasks/task_form.html', {'form': form})
     else:
         return redirect('task_list')
@@ -92,7 +109,7 @@ def task_delete(request, pk):
         if request.method == "POST":
             task.delete()
             return redirect('task_list')
-        return render(request, 'Tasks/task_confirm_delete.html', {'task': task})
+        return render(request, 'Tasks/task_list.html', {'task': task})
     else:
         return redirect('task_list')
 @login_required
@@ -102,6 +119,7 @@ def task_create(request):
         if request.method == "POST":
             form = TaskForm(request.POST)
             if form.is_valid():
+                form.myTeam = request.user.myTeam
                 form.save()
                 return redirect('task_list')
         else:
@@ -116,5 +134,13 @@ def task_take(request, pk):
     if task.myDoner is None and request.user.role == "worker":
         task.myDoner = request.user
         task.status = "process"
+        task.save()
+    return redirect('task_list')
+
+@login_required
+def task_finish(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    if task.myDoner == request.user and task.status == "process":
+        task.status = "done"
         task.save()
     return redirect('task_list')

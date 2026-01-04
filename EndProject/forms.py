@@ -35,20 +35,15 @@ class TaskForm(forms.ModelForm):
                 'type': 'date'
             }
         ),
-        initial=(datetime.today() + timedelta(days=30)).date()  # חודש קדימה
+        initial=(datetime.today() + timedelta(days=30)).date()
     )
-    myTeam = forms.ModelChoiceField(Team.objects.all())
-    myDoner = forms.ModelChoiceField(User.objects.all())
     class Meta:
         model = Task
-        fields = "__all__"
+        fields = ["title", "description", "deadline"]
         labels = {
             "title": "Title",
             "describe": "Description",
-            "deadline":"Deadline",
-            "status":"Status",
-            "myTeam" : "Team",
-            "myDoner": "Doner"
+            "deadline":"Deadline"
         }
 
 class TeamForm(forms.ModelForm):

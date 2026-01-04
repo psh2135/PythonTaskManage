@@ -17,10 +17,10 @@ urlpatterns = [
     #task
     path('tasks/', views.task_list, name='task_list'),
     path('task_take/', views.task_take, name='task_take'),
+    path('task_finish/', views.task_finish, name='task_finish'),
     path('tasks/add/', views.task_create, name='task_create'),
     path('tasks/edit/<int:pk>/', views.task_update, name='task_update'),
     path('tasks/delete/<int:pk>/', views.task_delete, name='task_delete'),
-    #team
 
 
 

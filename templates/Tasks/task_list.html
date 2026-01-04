@@ -2,9 +2,26 @@
 <html>
 <head>
     <title>Tasks List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'endProject/styles.css' %}">
+
 </head>
 <body>
     <h1>All Tasks</h1>
+    <form method="GET" action="{% url 'task_list' %}">
+        <label for="status">סטטוס:</label>
+        <select name="status" id="status">
+            <option value="">--בחר--</option>
+            <option value="open">פתוחה</option>
+            <option value="in_progress">בתהליך</option>
+            <option value="completed">הושלמה</option>
+        </select>
+
+        <label for="employee_name">שם עובד:</label>
+        <input type="text" name="employee_name" id="employee_name" placeholder="חפש עובד"/>
+
+        <button type="submit">סנן</button>
+    </form>
+
     {% if user.role == "admin" %}
         <a href="{% url 'task_create' %}">Add New Task</a>
     {% endif %}
@@ -13,13 +30,19 @@
             <th>Title</th>
             <th>Description</th>
             <th>Status</th>
+            <th>Doner</th>
             <th>Actions</th>
         </tr>
         {% for task in Tasks %}
         <tr>
             <td>{{ task.title }}</td>
-            <td>{{ task.description }}</td>
-            <td>{{ task.status }}</td>
+            <td>{{ task.describe }}</td>
+            <td>{{ task.status }}
+            {% if task.status == "process" and task.myDoner == user%}
+                <a href="{% url 'task_finish' task.pk %}">Task Finish</a>
+            {% endif %}
+            </td>
+            <td>{{ task.myDoner }}</td>
             <td>
                 {% if task.myDoner is None %}
                     {% if user.role == "worker" %}

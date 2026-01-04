@@ -1,10 +1,11 @@
+<link rel="stylesheet" type="text/css" href="{% static 'endProject/styles.css' %}">
 <h2>Home</h2>
 
 {% if user.is_authenticated %}
     Logged in as {{ user.username }}
     <br><br>
     <!-- Link to your Person CRUD list -->
-    <a href="{% url 'user_list' %}">Manage Persons</a>
+{#    <a href="{% url 'user_list' %}">Manage Persons</a>#}
     <br/>
     <a href="{% url 'task_list' %}">Manage Tasks</a>
     <br><br>
